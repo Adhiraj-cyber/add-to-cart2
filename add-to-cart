@@ -1,27 +1,43 @@
-<!DOCTYPE html>
 <html>
 <head>
 	<title>Add to Cart</title>
 	<style>
-		/* Add some basic styling to make the page look better */
 		body {
 			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		.container {
+			width: 80%;
+			margin: 40px auto;
+			display: flex;
+			justify-content: space-between;
 		}
 		.product {
-			width: 50%;
-			float: left;
+			width: 40%;
 			padding: 20px;
 			border: 1px solid #ddd;
 			border-radius: 10px;
 			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 		}
 		.cart {
-			width: 50%;
-			float: right;
+			width: 40%;
 			padding: 20px;
 			border: 1px solid #ddd;
 			border-radius: 10px;
 			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		.product-image {
+			width: 100%;
+			height: 200px;
+			margin-bottom: 20px;
+			border-radius: 10px;
+		}
+		.product-info {
+			margin-bottom: 20px;
+		}
+		.product-info h2 {
+			margin-top: 0;
 		}
 		.add-to-cart-btn {
 			background-color: #4CAF50;
@@ -34,29 +50,50 @@
 		.add-to-cart-btn:hover {
 			background-color: #3e8e41;
 		}
+		.cart-list {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+		.cart-list li {
+			margin-bottom: 10px;
+			padding: 10px;
+			border-bottom: 1px solid #ddd;
+		}
+		.cart-list li:last-child {
+			border-bottom: none;
+		}
+		.total-price {
+			margin-top: 20px;
+			font-weight: bold;
+		}
 	</style>
 </head>
 <body>
-	<!-- Product information -->
-	<div class="product">
-		<h2>Product Name</h2>
-		<p>Price: $19.99</p>
-		<button class="add-to-cart-btn">Add to Cart</button>
+	<div class="container">
+		<!-- Product information -->
+		<div class="product">
+			<img src="product-image.jpg" alt="Product Image" class="product-image">
+			<div class="product-info">
+				<h2>Product Name</h2>
+				<p>Price: ₹2600</p>
+				<p>Description: i dont know anything about this product. Google baba se puch lo</p>
+			</div>
+			<button class="add-to-cart-btn">Add to Cart</button>
+		</div>
+		
+		<!-- Shopping cart -->
+		<div class="cart">
+			<h2>Cart</h2>
+			<ul class="cart-list" id="cart-list">
+				<!-- Cart items will be displayed here -->
+			</ul>
+			<p class="total-price" id="total-price">Total: ₹0</p>
+		</div>
 	</div>
-	
-	<!-- Shopping cart -->
-	<div class="cart">
-		<h2>Cart</h2>
-		<ul id="cart-list">
-			<!-- Cart items will be displayed here -->
-		</ul>
-		<p id="total-price">Total: $0</p>
-	</div>
-	
-	<!-- Form to handle add to cart functionality -->
 	<form id="add-to-cart-form">
 		<input type="hidden" name="product-name" value="Product Name">
-		<input type="hidden" name="product-price" value="19.99">
+		<input type="hidden" name="product-price" value="2600">
 	</form>
 </body>
-</html>  
+</html>
